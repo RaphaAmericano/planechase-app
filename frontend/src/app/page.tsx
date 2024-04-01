@@ -1,3 +1,4 @@
+import Dice from "@/components/Dice";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +8,11 @@ export default function Home() {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+          <div>
+
+          <Dice />
+
+          </div>
             <div className="stack">
               <div className="text-center border border-base-content card w-36 bg-base-100">
                 <div className="card-body">
