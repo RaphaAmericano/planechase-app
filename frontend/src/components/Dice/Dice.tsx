@@ -29,53 +29,53 @@ function Dice(){
     //     setIntrvl(interval);
     // }
     return ( <DiceContainer>
-      <DiceFaceContainer diceFace={1}>
-        <DiceFace diceFace={1}>
-          <DotContainer>
-            <Dot />
-          </DotContainer>
-        </DiceFace>
-        <DiceFace diceFace={2}>
-          <DotContainer>
-            <Dot />
-            <Dot />
-            <Dot />
-          </DotContainer>
-        </DiceFace>
-        <DiceFace diceFace={3}>
-          <DotContainer>
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </DotContainer>
-        </DiceFace>
-        <DiceFace diceFace={4}>
-          <DotContainer>
-            <Dot />
-            <Dot />
-          </DotContainer>
-        </DiceFace>
-        <DiceFace diceFace={5}>
-          <DotContainer>
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </DotContainer>
-        </DiceFace>
-        <DiceFace diceFace={6}>
-          <DotContainer>
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </DotContainer>
+        <DiceElement diceFace={1}>
+          <DiceFace diceFace={1}>
+            <DotContainer>
+              <Dot />
+            </DotContainer>
           </DiceFace>
-      </DiceFaceContainer>
+          <DiceFace diceFace={2}>
+            <DotContainer>
+              <Dot />
+              <Dot />
+              <Dot />
+            </DotContainer>
+          </DiceFace>
+          <DiceFace diceFace={3}>
+            <DotContainer>
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+            </DotContainer>
+          </DiceFace>
+          <DiceFace diceFace={4}>
+            <DotContainer>
+              <Dot />
+              <Dot />
+            </DotContainer>
+          </DiceFace>
+          <DiceFace diceFace={5}>
+            <DotContainer>
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+            </DotContainer>
+          </DiceFace>
+          <DiceFace diceFace={6}>
+            <DotContainer>
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+              <Dot />
+            </DotContainer>
+            </DiceFace>
+        </DiceElement>
     </DiceContainer>)
 }
 
