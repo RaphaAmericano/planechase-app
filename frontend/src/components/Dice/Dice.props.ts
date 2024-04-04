@@ -1,6 +1,8 @@
 import { HTMLProps, ReactNode } from "react";
 
-export default interface DiceProps {}
+export default interface DiceProps {
+    diceFace: number
+}
 export interface DiceContainerProps extends HTMLProps<HTMLDivElement>{
     children: ReactNode
 }
