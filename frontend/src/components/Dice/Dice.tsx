@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
-import { DiceContainer, DiceElement, DiceFace, DiceFaceContainer, Dot, DotContainer } from "./Dice.style"
+import Image from "next/image"
+import { ChaosSide, DiceContainer, DiceElement, DiceFace, DiceFaceContainer, Dot, DotContainer } from "./Dice.style"
 import DiceProps from "./Dice.props";
 function Dice({ diceFace }: DiceProps){
 
@@ -8,47 +9,40 @@ function Dice({ diceFace }: DiceProps){
               <DiceElement diceFace={diceFace}>
                 <DiceFace diceFace={1}>
                   <DotContainer>
-                    <Dot />
+                    <i className="ss ss-mb1 ss-6x"></i>
+                    {/* <Dot /> */}
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceFace={2}>
                   <DotContainer>
-                    <Dot />
-                    <Dot />
-                    <Dot />
+                    
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceFace={3}>
                   <DotContainer>
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
+                    
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceFace={4}>
                   <DotContainer>
-                    <Dot />
-                    <Dot />
+                    
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceFace={5}>
                   <DotContainer>
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
+                    
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceFace={6}>
                   <DotContainer>
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
-                    <Dot />
+                    <ChaosSide />
+                    {/* <Image 
+                      priority
+                      width={32}
+                      height={32}
+                      src="/svg/chaos_symbol.svg"
+                      alt="Chaos Symbol" 
+                      /> */}
                   </DotContainer>
                   </DiceFace>
               </DiceElement>

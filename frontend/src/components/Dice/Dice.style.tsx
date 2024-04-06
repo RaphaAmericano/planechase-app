@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { DiceContainerProps, DiceElementProps, DiceFaceContainerProps, DiceFaceProps, DotContainerProps, DotProps } from "./Dice.props"
-
+import chaosSymbolSvg from "./../../../public/svg/chaos_symbol.svg"
 const diceSize = 160
 const dotSize = Math.round(((diceSize * .18) + Number.EPSILON) * 100 ) / 100
 
@@ -335,5 +335,11 @@ const DiceFaceContainer = styled.div<DiceFaceContainerProps>`
         }
     }}
 `
+const ChaosSide = styled.div<DotProps>`
+    background-image: url('${chaosSymbolSvg.src}');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+`
 
-export { DiceContainer, DiceElement, DiceFaceContainer, DiceFace , Dot, DotContainer } 
+export { DiceContainer, DiceElement, DiceFaceContainer, DiceFace , Dot, DotContainer, ChaosSide } 
