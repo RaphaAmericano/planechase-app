@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { DiceContainerProps, DiceElementProps, DiceFaceContainerProps, DiceFaceProps, DotContainerProps, DotProps } from "./Dice.props"
 import chaosSymbolSvg from "./../../../public/svg/chaos_symbol.svg"
-const diceSize = 160
+const diceSize = 160 
 const dotSize = Math.round(((diceSize * .18) + Number.EPSILON) * 100 ) / 100
 
 const DiceContainer = styled.div<DiceContainerProps>`
@@ -11,12 +11,15 @@ const DiceContainer = styled.div<DiceContainerProps>`
 `
 const DotContainer = styled.div<DotContainerProps>`
     display:grid;
-    grid-template-columns: repeat(3, ${dotSize}px);
-    grid-template-rows: repeat(3, ${dotSize}px);
+    // grid-template-columns: repeat(3, ${dotSize}px);
+    // grid-template-rows: repeat(3, ${dotSize}px);
+    // grid-gap: ${dotSize / 4}px ${dotSize / 4}px;
+    grid-template-columns: repeat(1, ${dotSize * 3.6 }px);
+    grid-template-rows: repeat(1, ${dotSize * 3 }px);
     grid-gap: ${dotSize / 4}px ${dotSize / 4}px;
 `
 
-const Dot =  styled.div<DotProps>`
+const Dot = styled.div<DotProps>`
     background-color: black;
     border-radius: 50%;
 `
@@ -148,10 +151,14 @@ const DiceFace = styled.div<DiceFaceProps>`
                 return `
                     transform: translateX(0) translateY(0) translateZ(${diceSize}/2);
                     ${DotContainer}{
+                        // ${Dot}{
+                        //     grid-column: 2 / span 1;
+                        //     grid-row: 2 / span 1;
+                        // }
                         ${Dot}{
                             grid-column: 2 / span 1;
                             grid-row: 2 / span 1;
-                          }
+                        }
                     }
                 `
             };

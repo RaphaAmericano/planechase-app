@@ -1,3 +1,4 @@
+import { Plane } from "@/components/Plane/Plane.props";
 import httpService from "./http.service";
 
 const scryfallService = Object.assign({}, httpService)
@@ -11,7 +12,7 @@ async function getCardsSearch(query:string){
     return result
 }
 
-async function getAllPlanes(){
+async function getAllPlanes(): Promise<Plane[]>{
     const result = await getCardsSearch("type%3Aplane")
     // const response = await fetch("https://api.scryfall.com/cards/search?q=type%3Aplane", { next: { tags:[ "planes"] }})
     // const result = await response.json()

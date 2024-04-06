@@ -1,14 +1,12 @@
-import { getAllPlanes } from "@/lib/services/scryfall.service"
-
-async function PlanesContainer(){
-    const planes = await getAllPlanes()
-    
-    return <>
-        <h2>Planes</h2>
-        <ul>
-            {planes.map((plane:any) => <div key={plane.id}>{plane.name}</div>)}
-        </ul>
-    </>
+import { Plane as PlaneProps } from "../Plane/Plane.props"
+import Plane from "../Plane"
+type Props = {
+    planes: PlaneProps[]
+}
+async function PlanesContainer({ planes }:Props){
+    return  <div className="stack  rotate-90">
+                {planes.map((plane: PlaneProps) => <Plane key={plane.id} {...plane} />)}
+            </div>    
 }
 
 export default PlanesContainer

@@ -1,7 +1,6 @@
 "use client"
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import { ChaosSide, DiceContainer, DiceElement, DiceFace, DiceFaceContainer, Dot, DotContainer } from "./Dice.style"
+
+import { ChaosSide, DiceContainer, DiceElement, DiceFace, DotContainer } from "./Dice.style"
 import DiceProps from "./Dice.props";
 function Dice({ diceFace }: DiceProps){
 
@@ -36,13 +35,6 @@ function Dice({ diceFace }: DiceProps){
                 <DiceFace diceFace={6}>
                   <DotContainer>
                     <ChaosSide />
-                    {/* <Image 
-                      priority
-                      width={32}
-                      height={32}
-                      src="/svg/chaos_symbol.svg"
-                      alt="Chaos Symbol" 
-                      /> */}
                   </DotContainer>
                   </DiceFace>
               </DiceElement>

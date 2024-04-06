@@ -27,14 +27,17 @@ function Navbar(props: any){
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
         <li><a>Partida</a></li>
+        <li><a>Regras</a></li>
+        <li><a>O que é</a></li>
+      </ul>
+    </div>
+    <div className="navbar-end">
+    <ul className="menu menu-horizontal px-1">
         <li>
           <details>
-            <summary>Parent</summary>
+            <summary>Tema</summary>
             <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-              <li>
-              </li>
+              
               <div className="join join-vertical">
                   <input type="radio" name="theme-buttons" className="btn theme-controller join-item" aria-label="Default" value="default"/>
                   <input type="radio" name="theme-buttons" className="btn theme-controller join-item" aria-label="Retro" value="retro"/>
@@ -45,11 +48,7 @@ function Navbar(props: any){
             </ul>
           </details>
         </li>
-        <li><a>O que é</a></li>
       </ul>
-    </div>
-    <div className="navbar-end">
-      <a className="btn">Button</a>
     </div>
   </div>)
 }
