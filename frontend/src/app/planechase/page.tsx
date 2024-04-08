@@ -1,10 +1,8 @@
 import { getAllPlanes } from "@/actions/actions";
 import DiceContent from "@/components/DiceContent";
 import PlaneData from "@/components/PlaneData/PlaneData";
-import PlanesContainer from "@/components/PlanesContainer";
 import PlanesContent from "@/components/PlanesContent";
 import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query";
-import Image from "next/image";
 
 export default async function Planechase() {
   const queryClient = new QueryClient()
