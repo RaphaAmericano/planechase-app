@@ -1,42 +1,16 @@
-
-// import usePlanechase from "@/lib/hooks/usePlanechase";
+"use client"
 import PlanesContainer from "../PlanesContainer";
-import { useEffect, useState } from "react";
-import { getAllPlanes } from "@/lib/services/scryfall.service";
-import { Plane } from "../Plane/Plane.props";
+import usePlanechase from "@/lib/hooks/usePlanechase";
 
-function shuffleArray(arr:any[]){
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1)); // Escolhe um índice aleatório entre 0 e i
-        [arr[i], arr[j]] = [arr[j], arr[i]]; // Troca os elementos nas posições i e j
-    }
-    return arr;
-}
-
-function moveFirstToLast(arr:any[]){
-    if(arr.length <= 1) {
-        return arr
-    }
-    const firstEl = arr.shift()
-    arr.push(firstEl)
-    return arr
-}
-
-async function PlanesContent(){
-    const planes = await getAllPlanes()
+function PlanesContent(){
+    const { error, isLoading, isFetched, planes } = usePlanechase()
     
-    if( planes === undefined ) return <span className="loading loading-spinner loading-lg"></span>
+    if(error) return <h2>Erro</h2>
+    if(isLoading) return <span className="loading loading-spinner loading-lg"></span>
 
-    const gamePlanes = shuffleArray(planes)
-
-    function nextPlane(){
-        moveFirstToLast(gamePlanes)
+    if(isFetched){ 
+        return <PlanesContainer planes={planes} />
     }
-
-    return (
-
-        <PlanesContainer planes={gamePlanes} />
-    )
 }
 
 export default PlanesContent

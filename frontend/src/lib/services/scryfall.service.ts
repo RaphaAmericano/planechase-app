@@ -8,7 +8,7 @@ scryfallService.defaults.baseURL = "https://api.scryfall.com/"
 // https://api.scryfall.com/cards/search?q=type%3Aplane
 
 async function getCardsSearch(query:string){
-    const result = await scryfallService.get(`/cards/search?q=${query}`)
+    const result = await scryfallService.get<Plane[]>(`/cards/search?q=${query}`)
     return result
 }
 
@@ -21,4 +21,4 @@ async function getAllPlanes(): Promise<Plane[]>{
 }
 
 export default scryfallService
-export { getCardsSearch, getAllPlanes }
+export { getCardsSearch }
