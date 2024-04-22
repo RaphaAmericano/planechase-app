@@ -1,8 +1,3 @@
-import DiceContent from "@/components/DiceContent";
-import PlanesContainer from "@/components/PlanesContainer";
-import PlanesContent from "@/components/PlanesContent";
-import Image from "next/image";
-
 export default function Home() {
 
   return (   

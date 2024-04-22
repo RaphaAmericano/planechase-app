@@ -2,6 +2,7 @@ import { getAllPlanes } from "@/actions/actions";
 import DiceContent from "@/components/DiceContent";
 import PlaneData from "@/components/PlaneData/PlaneData";
 import PlanesContent from "@/components/PlanesContent";
+import ShuffleButton from "@/components/ShuffleButton";
 import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query";
 
 export default async function Planechase() {
@@ -19,6 +20,7 @@ export default async function Planechase() {
           <p className="py-6">Role o dado</p>
           <HydrationBoundary state={dehydrate(queryClient)}>
             <DiceContent />
+            <ShuffleButton />
             <PlanesContent />
             <PlaneData />
           </HydrationBoundary>
