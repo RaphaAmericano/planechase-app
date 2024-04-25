@@ -1,12 +1,7 @@
 "use client"
-
-
+import { usePlaneStore } from "@/lib/store/plane-store"
 function ShuffleButton(){
-    // const { shufflePlanes } = useShufflePlanes()
-    function shuffle(){
-        shufflePlanes()
-    }
-    return <button className="btn btn-primary" disabled={false} onClick={shuffle}>Embaralhar</button>
+    const { shufflePlanes } = usePlaneStore()
+    return <button className="btn btn-primary" disabled={false} onClick={shufflePlanes}>Embaralhar</button>
 }
-
 export default ShuffleButton

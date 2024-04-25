@@ -34,8 +34,8 @@ const DiceFace = styled.div<DiceFaceProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    ${({ diceFace }: DiceElementProps ) => {
-        switch(diceFace){
+    ${({ diceface }: DiceElementProps ) => {
+        switch(diceface){
             case 6:
                 return`
                     transform: translateX(0) translateY(0) translateZ(-${diceSize}/2);
@@ -173,8 +173,8 @@ const DiceElement = styled.div<DiceElementProps>`
     width: ${diceSize}px;
     transform-style: preserve-3d;
     transition: all 200ms;
-    ${({ diceFace }: DiceElementProps ) => {
-        switch(diceFace){
+    ${({ diceface }: DiceElementProps ) => {
+        switch(diceface){
             case 6:
                 return "transform: rotateX(-180deg);"
             case 5:
@@ -217,8 +217,8 @@ const DiceFaceContainer = styled.div<DiceFaceContainerProps>`
         justify-content: center;
         align-items: center;
     }
-    ${({ diceFace }) => {
-        switch(diceFace){
+    ${({ diceface }) => {
+        switch(diceface){
             case 6:
                 return `
                     transform: translateX(0) translateY(0) translateZ(-160/2);

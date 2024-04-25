@@ -6,7 +6,6 @@ import ShuffleButton from "@/components/ShuffleButton";
 
 export default async function Planechase() {
   const loadPlanes = await getAllPlanes()
-  console.log(loadPlanes)
   return (   
     <main className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">

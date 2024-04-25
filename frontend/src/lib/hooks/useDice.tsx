@@ -13,7 +13,7 @@ function useDice(){
           clearInterval(intrvl);
           setOnRolling(false);
         }
-      },[rollTimes, intrvl]);
+    },[rollTimes, intrvl]);
 
     function rollDice() {
         setOnRolling(true)

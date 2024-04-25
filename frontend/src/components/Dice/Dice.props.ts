@@ -1,24 +1,24 @@
 import { HTMLProps, ReactNode } from "react";
 
 export default interface DiceProps {
-    diceFace: number
+    diceface: number
 }
 export interface DiceContainerProps extends HTMLProps<HTMLDivElement>{
     children: ReactNode
 }
 export interface DiceElementProps extends HTMLProps<HTMLDivElement>{
     children: ReactNode
-    diceFace: number
+    diceface: number
 }
 
 export interface DiceFaceContainerProps extends HTMLProps<HTMLDivElement>{
     children: ReactNode
-    diceFace: number
+    diceface: number
 }
 
 export interface DiceFaceProps extends HTMLProps<HTMLDivElement>{
     children: ReactNode
-    diceFace: number
+    diceface: number
 }
 
 export interface DotContainerProps extends HTMLProps<HTMLDivElement>{
