@@ -1,9 +1,8 @@
 "use client"
 
-import { useShufflePlanes } from "@/lib/hooks/usePlanechase"
 
 function ShuffleButton(){
-    const { shufflePlanes } = useShufflePlanes()
+    // const { shufflePlanes } = useShufflePlanes()
     function shuffle(){
         shufflePlanes()
     }

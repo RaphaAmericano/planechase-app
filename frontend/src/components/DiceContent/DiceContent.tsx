@@ -1,29 +1,16 @@
-"use client"
-import useDice from "@/lib/hooks/useDice"
+import { useDiceStore } from "@/lib/store/dice-store"
 import Dice from "../Dice"
-import { useNextPlane } from "@/lib/hooks/usePlanechase"
-import { useEffect } from "react"
+import { RollButton } from "./RollButton"
 function DiceContent(){
-    const { diceFace, onRolling, rollDice } = useDice()
-    const { nextPlane } = useNextPlane()
-
-    function roll(){
-        rollDice()
-    }
-
-    useEffect(() => {
-        if((onRolling === false) && (diceFace === 1 )){
-            nextPlane()
-        }
-    },[diceFace, onRolling,  nextPlane])
+    const { face } = useDiceStore.getState()
 
     return(
         <>
             <div className="flex justify-center p4 mb-2">
-                <Dice diceFace={diceFace}/>
+                <Dice diceFace={face}/>
             </div>
             <div>
-                <button className="btn btn-primary" disabled={onRolling} onClick={roll}>Roll dice!!!</button>
+                <RollButton />
             </div>
         </>
   )

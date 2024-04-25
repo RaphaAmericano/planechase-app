@@ -1,5 +1,5 @@
-"use client"
-import usePlanechase, { useGetCurrentPlane } from "@/lib/hooks/usePlanechase";
+ 
+import { usePlaneStore } from "@/lib/store/plane-store";
 import { Plane } from "../Plane/Plane.props";
 
 function splitCaosText(text:string){
@@ -13,7 +13,8 @@ function splitPlaneName(text:string){
 }
 // TODO: adicionar o icone de caos ao lado do refeito
 function PlaneData(){
-    const currentPlane = useGetCurrentPlane()
+    const currentPlane = usePlaneStore.getState().current()
+    
     if(currentPlane === null) return 
     const { planeEffect, caosEffect } = splitCaosText(currentPlane.oracle_text)
     return <div>
