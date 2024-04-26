@@ -21,15 +21,7 @@ export const useDiceStore = create<DiceStore>()((set) => ({
     maxRollTimes: 10,
     face: 1,
     onRolling: false,
-    roll: () => {
-        // set({ onRolling: true })
-        // set((state) => {
-        //     let counter = Math.floor((Math.random () * state.maxRollTimes) + 1)
-
-          
-        //     return state
-        // })
-    },
+    roll: () => {},
     setDiceFace: (face: number) => set(() => ({ face })),
     setOnRolling: (on: boolean) => set(() => ({ onRolling: on })),
     inverteOnRolling:() => set(({ onRolling }) => ({ onRolling: !onRolling }))

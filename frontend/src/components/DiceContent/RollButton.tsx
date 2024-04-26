@@ -3,6 +3,7 @@ import { useDiceStore } from "@/lib/store/dice-store"
 import { useEffect, useState } from "react"
 
 function RollButton(){
+    const { subscribe } = useDiceStore
     const { faces, face, onRolling, roll, maxRollTimes, setOnRolling, setDiceFace } = useDiceStore()
     const [intrvl, setIntrvl] = useState<NodeJS.Timeout | undefined>();
     const [rollTimes, setRollTimes] = useState(10);
@@ -14,6 +15,7 @@ function RollButton(){
         }
     },[rollTimes, intrvl, setOnRolling]);
 
+    
     useEffect(() => {
         if((onRolling === false) && (face === 1 )){
             // nextPlane()

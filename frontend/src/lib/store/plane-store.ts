@@ -18,8 +18,13 @@ type PlaneStore = PlaneState & PlaneActions
 
 export const usePlaneStore = create<PlaneStore>()((set, get) => ({
     planes: [],
-    setPlanes: (planes:Plane[]) => set((state) => ({ planes })),
-    shufflePlanes: () => set(({ planes }) => ({ planes: shuffleArray(planes)})),
+    setPlanes: (planes:Plane[]) => {
+        
+        set((state) => ({ ...state, planes }))
+    },
+    shufflePlanes: () => set((state) => {
+        return ({ planes: shuffleArray(state.planes)})
+    }),
     add: (plane: Plane) => set((state) => ({ planes: [...state.planes, plane]})),
     current: () => get().planes[0]
 }))

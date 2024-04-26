@@ -1,4 +1,3 @@
-"use client"
 import { Plane as PlaneProps } from "../Plane/Plane.props"
 import Plane from "../Plane"
 type Props = {
