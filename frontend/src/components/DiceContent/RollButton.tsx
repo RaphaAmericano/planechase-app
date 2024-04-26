@@ -1,10 +1,11 @@
 "use client"
 import { useDiceStore } from "@/lib/store/dice-store"
+import { usePlaneStore } from "@/lib/store/plane-store"
 import { useEffect, useState } from "react"
 
 function RollButton(){
-    const { subscribe } = useDiceStore
     const { faces, face, onRolling, roll, maxRollTimes, setOnRolling, setDiceFace } = useDiceStore()
+    const { nextPlane } = usePlaneStore()
     const [intrvl, setIntrvl] = useState<NodeJS.Timeout | undefined>();
     const [rollTimes, setRollTimes] = useState(10);
 
@@ -15,12 +16,12 @@ function RollButton(){
         }
     },[rollTimes, intrvl, setOnRolling]);
 
-    
     useEffect(() => {
         if((onRolling === false) && (face === 1 )){
-            // nextPlane()
+            console.log(face)
+            nextPlane()
         }
-    },[face, onRolling])
+    },[face, onRolling, nextPlane])
 
     
     function rollDice(){

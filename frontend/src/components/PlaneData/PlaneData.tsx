@@ -14,9 +14,7 @@ function splitPlaneName(text:string){
 }
 // TODO: adicionar o icone de caos ao lado do refeito
 function PlaneData(){
-    const { current } = usePlaneStore()
-    const currentPlane = current()
-
+    const currentPlane = usePlaneStore().current()
     if(currentPlane === null) return null 
     const { planeEffect, caosEffect } = splitCaosText(currentPlane.oracle_text)
     return <div>
