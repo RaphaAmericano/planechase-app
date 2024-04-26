@@ -16,6 +16,7 @@ function splitPlaneName(text:string){
 function PlaneData(){
     const currentPlane = usePlaneStore().current()
     if(currentPlane === null) return null 
+    
     const { planeEffect, caosEffect } = splitCaosText(currentPlane.oracle_text)
     return <div>
         <h1 className="text-5xl font-bold">{currentPlane.name}</h1>

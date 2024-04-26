@@ -5,27 +5,31 @@ import { shuffleArray, moveFirstToLast } from "../utils/gameFunctions";
 
 type PlaneState = {
     planes: Plane[];
+    currentPlanes: Plane[];
+    historyPlanes: Plane[];
 }
 
 type PlaneActions = {
     setPlanes: (planes: Plane[]) => void;
+    setCurrentPlanes: (planes: Plane[]) => void;
     shufflePlanes: () => void;
     nextPlane: () => void;
     add: (plane: Plane) => void;
     current: () => Plane;
+    addHistoryPlane: (plane: Plane) => void;
 }
 
 type PlaneStore = PlaneState & PlaneActions 
 
 export const usePlaneStore = create<PlaneStore>()((set, get) => ({
     planes: [],
-    setPlanes: (planes:Plane[]) => {
-        set((state) => ({ ...state, planes }))
-    },
+    currentPlanes:[],
+    historyPlanes:[],
+    setPlanes: (planes:Plane[]) => set((state) => ({ ...state, planes })),
+    setCurrentPlanes: (planes:Plane[]) => set((state) => ({ ...state, currentPlanes: planes })),
     nextPlane: () => set((state) => ({ ...state, planes: moveFirstToLast(state.planes)})),
-    shufflePlanes: () => set((state) => {
-        return ({ planes: shuffleArray(state.planes)})
-    }),
+    shufflePlanes: () => set((state) => ({ planes: shuffleArray(state.planes)}) ),
     add: (plane: Plane) => set((state) => ({ planes: [...state.planes, plane]})),
-    current: () => get().planes[0]
+    current: () => get().planes[0],
+    addHistoryPlane: (plane) => set((state) => ( { ...state, historyPlanes: [...state.historyPlanes, plane ]}) ),
 }))

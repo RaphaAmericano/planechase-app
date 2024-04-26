@@ -4,7 +4,7 @@ type Props = {
     planes: PlaneProps[]
 }
 function PlanesContainer({ planes }:Props){
-    return  <div className="stack  rotate-90">
+    return  <div className="stack rotate-90">
                 {planes.map((plane: PlaneProps) => <Plane key={plane.id} {...plane} />)}
             </div>    
 }
