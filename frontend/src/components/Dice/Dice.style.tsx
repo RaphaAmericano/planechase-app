@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { DiceContainerProps, DiceElementProps, DiceFaceContainerProps, DiceFaceProps, DotContainerProps, DotProps } from "./Dice.props"
 import chaosSymbolSvg from "./../../../public/svg/chaos_symbol.svg"
+import planeswalkerSymbolSvg from "./../../../public/svg/mtg_symbol.svg"
 const diceSize = 160 
 const dotSize = Math.round(((diceSize * .18) + Number.EPSILON) * 100 ) / 100
 
@@ -30,7 +31,7 @@ const DiceFace = styled.div<DiceFaceProps>`
     width: ${diceSize}px;
     outline: 2px solid #00BBFF;
     outline-offset: -2px;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +39,7 @@ const DiceFace = styled.div<DiceFaceProps>`
         switch(diceface){
             case 6:
                 return`
-                    transform: translateX(0) translateY(0) translateZ(-${diceSize}/2);
+                    transform: translateX(0) translateY(0) translateZ(-${diceSize / 2 }px);
                     ${DotContainer}{
                         ${Dot}:nth-child(1){
                             grid-column: 1 / span 1;
@@ -149,7 +150,7 @@ const DiceFace = styled.div<DiceFaceProps>`
             case 1:
             default:
                 return `
-                    transform: translateX(0) translateY(0) translateZ(${diceSize}/2);
+                    transform: translateX(0) translateY(0) translateZ(${diceSize / 2 }px);
                     ${DotContainer}{
                         // ${Dot}{
                         //     grid-column: 2 / span 1;
@@ -197,7 +198,7 @@ const DiceElement = styled.div<DiceElementProps>`
         width: ${diceSize}px;
         outline: 2px solid #00BBFF;
         outline-offset: -2px;
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255,255,255,1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -212,7 +213,7 @@ const DiceFaceContainer = styled.div<DiceFaceContainerProps>`
         width: ${diceSize}px;
         outline: 2px solid #00BBFF;
         outline-offset: -2px;
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255,255,255,1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -349,4 +350,11 @@ const ChaosSide = styled.div<DotProps>`
     width: 100%;
 `
 
-export { DiceContainer, DiceElement, DiceFaceContainer, DiceFace , Dot, DotContainer, ChaosSide } 
+const PlanewalkerSide = styled.div<DotProps>`
+    background-image: url('${planeswalkerSymbolSvg.src}');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+`
+
+export { DiceContainer, DiceElement, DiceFaceContainer, DiceFace , Dot, DotContainer, ChaosSide, PlanewalkerSide } 

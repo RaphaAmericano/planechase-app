@@ -1,6 +1,6 @@
 "use client"
 
-import { ChaosSide, DiceContainer, DiceElement, DiceFace, DotContainer } from "./Dice.style"
+import { ChaosSide, PlanewalkerSide, DiceContainer, DiceElement, DiceFace, DotContainer } from "./Dice.style"
 import { useDiceStore } from "@/lib/store/dice-store";
 function Dice(){
     const { face } = useDiceStore()
@@ -8,8 +8,11 @@ function Dice(){
               <DiceElement diceface={face}>
                 <DiceFace diceface={1}>
                   <DotContainer>
-                    <i className="ss ss-mb1 ss-6x"></i>
+                    {/* <div style={ {backgroundSize:"cover", height: "100%", width:"100%"  } }>
+                      <i className="ss ss-mb1 ss-6x"></i>
+                    </div> */}
                     {/* <Dot /> */}
+                    < PlanewalkerSide />
                   </DotContainer>
                 </DiceFace>
                 <DiceFace diceface={2}>
@@ -43,3 +46,7 @@ function Dice(){
 
 export default Dice;
 
+// display: grid;
+//     grid-template-columns: repeat(1,103.68px);
+//     grid-template-rows: repeat(1,86.4px);
+//     grid-gap: 7.2px 7.2px;
