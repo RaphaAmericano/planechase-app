@@ -1,7 +1,7 @@
 import { NavbarProps } from "./Navbar.props"
 import Link from "next/link"
 function Navbar(props: any){
-    return (<div className="navbar bg-base-100">
+    return (<nav className="navbar bg-base-100">
     <div className="navbar-start">
       <div className="dropdown">
         <div  tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +54,7 @@ function Navbar(props: any){
         </li>
       </ul>
     </div>
-  </div>)
+  </nav>)
 }
 
 export default Navbar

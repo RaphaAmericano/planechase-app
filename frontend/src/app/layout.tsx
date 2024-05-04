@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StyledComponentsRegistry from "@/lib/registry";
+import Toast from "@/components/Toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <Navbar />
           {children}
+          <Toast />
           <Footer />
         </StyledComponentsRegistry>
       </body>

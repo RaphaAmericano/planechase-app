@@ -3,11 +3,11 @@ import { RollButton } from "./RollButton"
 function DiceContent(){
     
     return(
-        <div>
-            <div className="flex justify-center p4 mb-2">
+        <div className="flex flex-col justify-center p4 mb-2">
+            <div className="mb-2">
                 <Dice />
             </div>
-            <div>
+            <div >
                 <RollButton />
             </div>
         </div>

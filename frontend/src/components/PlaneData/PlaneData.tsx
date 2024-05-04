@@ -15,15 +15,17 @@ function splitPlaneName(text:string){
 // TODO: adicionar o icone de caos ao lado do refeito
 function PlaneData(){
     const currentPlane = usePlaneStore().current()
-    if(currentPlane === null) return null 
-    
+    console.log(currentPlane)
+    if(currentPlane?.oracle_text === undefined ) return null 
     const { planeEffect, caosEffect } = splitCaosText(currentPlane.oracle_text)
-    return <div>
-        <h1 className="text-5xl font-bold">{currentPlane.name}</h1>
-        <h4 className="text-2xl font-bold py-2">{splitPlaneName(currentPlane.type_line)}</h4>
-        <p className="py-6">{planeEffect}</p>
-        <p className="py-6">{caosEffect}</p>
-    </div>
+    return (
+            <div>
+                <h1 className="text-5xl font-bold">{currentPlane.name}</h1>
+                <h4 className="text-2xl font-bold py-2">{splitPlaneName(currentPlane.type_line)}</h4>
+                <p className="py-6">{planeEffect}</p>
+                <p className="py-6">{caosEffect}</p>
+            </div>
+            )
 }
 
 export default PlaneData

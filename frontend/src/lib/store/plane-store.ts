@@ -27,9 +27,9 @@ export const usePlaneStore = create<PlaneStore>()((set, get) => ({
     historyPlanes:[],
     setPlanes: (planes:Plane[]) => set((state) => ({ ...state, planes })),
     setCurrentPlanes: (planes:Plane[]) => set((state) => ({ ...state, currentPlanes: planes })),
-    nextPlane: () => set((state) => ({ ...state, planes: moveFirstToLast(state.planes)})),
+    nextPlane: () => set((state) => ({ ...state, historyPlanes:[...state.historyPlanes, get().current()], planes: moveFirstToLast(state.planes)})),
     shufflePlanes: () => set((state) => ({ planes: shuffleArray(state.planes)}) ),
     add: (plane: Plane) => set((state) => ({ planes: [...state.planes, plane]})),
-    current: () => get().planes[0],
+    current: () => get().currentPlanes[0],
     addHistoryPlane: (plane) => set((state) => ( { ...state, historyPlanes: [...state.historyPlanes, plane ]}) ),
 }))
