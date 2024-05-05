@@ -31,7 +31,7 @@ function Navbar(props: any){
       <ul className="menu menu-horizontal px-1">
         <li><Link href="/planechase">Partida</Link></li>
         <li><Link href="/rules">Regras</Link></li>
-        <li><a>O que é</a></li>
+        <li><Link href="/about">O que é?</Link></li>
       </ul>
     </div>
     <div className="navbar-end">

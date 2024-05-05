@@ -5,9 +5,9 @@ import { useToastStore } from "@/lib/store/toast.store"
 import { useEffect, useState } from "react"
 
 function RollButton(){
-    const { faces, face, onRolling, roll, maxRollTimes, setOnRolling, setDiceFace } = useDiceStore()
+    const { faces, face, onRolling, maxRollTimes, setOnRolling, setDiceFace } = useDiceStore()
     const { nextPlane } = usePlaneStore()
-    const { open, close, setMessage } = useToastStore()
+    const { active, open, close, setMessage } = useToastStore()
     const [intrvl, setIntrvl] = useState<NodeJS.Timeout | undefined>();
     const [rollTimes, setRollTimes] = useState(10);
 
@@ -24,6 +24,7 @@ function RollButton(){
                 open()
                 setMessage("Você viajou para outro plano")
                 nextPlane()
+                
             }
             if(face === 6){
                 open()
@@ -31,6 +32,15 @@ function RollButton(){
             }
         }
     },[face, onRolling, nextPlane, open, close, setMessage, intrvl])
+
+    useEffect(() => {
+        if(active === true){
+            const interval = setInterval(()=>{
+                close()
+            }, 5000);
+            setIntrvl(interval);
+        }
+    },[active, close])
     
     function rollDice(){
         setOnRolling(true)
@@ -42,10 +52,9 @@ function RollButton(){
             time.counter--;
             setRollTimes(time.counter)    
         }, 200);
-        
         setIntrvl(interval);
     }
 
-    return <button className="btn btn-primary" disabled={onRolling} onClick={rollDice}>Roll dice!!!</button>
+    return <button className="btn btn-primary" disabled={onRolling} onClick={rollDice}>Rolar o dado!!!</button>
 }
 export { RollButton }

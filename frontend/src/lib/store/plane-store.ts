@@ -17,6 +17,7 @@ type PlaneActions = {
     add: (plane: Plane) => void;
     current: () => Plane;
     addHistoryPlane: (plane: Plane) => void;
+    resetHistoryPlane: () => void;
 }
 
 type PlaneStore = PlaneState & PlaneActions 
@@ -40,4 +41,5 @@ export const usePlaneStore = create<PlaneStore>()((set, get) => ({
     add: (plane: Plane) => set((state) => ({ planes: [...state.planes, plane]})),
     current: () => get().currentPlanes[0],
     addHistoryPlane: (plane) => set((state) => ( { ...state, historyPlanes: [...state.historyPlanes, plane ]}) ),
+    resetHistoryPlane: () => set((state) => ({ ...state, historyPlanes: []}))
 }))

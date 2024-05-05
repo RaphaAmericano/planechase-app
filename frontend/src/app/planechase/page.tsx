@@ -1,6 +1,7 @@
 import { getAllPlanes } from "@/actions/actions";
 import DiceContent from "@/components/DiceContent";
 import HistoryContainer from "@/components/HistoryContainer";
+import NewGameButton from "@/components/NewGameButton";
 import PlaneData from "@/components/PlaneData/PlaneData";
 import PlanesContent from "@/components/PlanesContent";
 import ShuffleButton from "@/components/ShuffleButton";
@@ -32,27 +33,28 @@ export default async function Planechase() {
 
           <div className="text-center">
             <div className="mt-10 flex items-center justify-center gap-x-6">
+              <NewGameButton />
+              <ShuffleButton />
+              <HistoryContainer />
+            </div>
+          </div>
+
+
+          <div className="text-center">
+            <div className="mt-10 flex items-center justify-center gap-x-6">
               <PlanesContent planes={planes} />
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <ShuffleButton />
-            </div>
-          </div>
+          
 
           <div className="text-center">
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              {/* <PlaneData /> */}
+              <PlaneData />
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <HistoryContainer />
-            </div>
-          </div>
+        
 
         </div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
