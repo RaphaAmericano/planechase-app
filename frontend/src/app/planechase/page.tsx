@@ -48,12 +48,16 @@ export default async function Planechase() {
             </div>
           </div>
 
+          <div className="text-center">
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <HistoryContainer />
+            </div>
+          </div>
+
         </div>
         <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
       </div>
 
-      <HistoryContainer />
-      
     </div>
 
 

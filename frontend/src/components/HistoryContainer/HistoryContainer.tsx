@@ -1,14 +1,34 @@
 "use client"
 import { usePlaneStore } from "@/lib/store/plane-store"
+import { useEffect, useId, useRef } from "react"
 
 function HistoryContainer(){
     const { historyPlanes } = usePlaneStore()
-    console.log(historyPlanes)
-    return <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Histórico</h2>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            {historyPlanes.map((plane) => plane.name)}
-        </div>
-    </div>
+    const modal_ref = useRef<HTMLDialogElement>(null)
+    useEffect(() => {
+        console.log(historyPlanes)
+    },[historyPlanes])
+
+    function openModal(){
+        modal_ref.current?.showModal()
+    }
+    function closeModal(){
+        modal_ref.current?.close()
+    }
+
+    return <>
+            <button className="btn" onClick={openModal}>Histórico</button>
+            <dialog ref={modal_ref} className="modal">
+            <div className="modal-box">
+                <h3 className="font-bold text-lg">Os planos que você já viajou</h3>
+                    {(Array.isArray(historyPlanes) && historyPlanes.length > 0) ? 
+                    <ul>
+                    {historyPlanes.map((plane) => (<li key={plane.id}>{plane.name}</li>)) }
+                    </ul>
+                    : null }
+                <button className="btn" onClick={closeModal}>Fechar</button>
+            </div>
+            </dialog>
+        </>
 }
 export default HistoryContainer
