@@ -5,9 +5,6 @@ import NewGameButton from "@/components/NewGameButton";
 import PlaneData from "@/components/PlaneData/PlaneData";
 import PlanesContent from "@/components/PlanesContent";
 import ShuffleButton from "@/components/ShuffleButton";
-import { usePlaneStore } from "@/lib/store/plane-store";
-import { shuffleArray } from "@/lib/utils/gameFunctions";
-import { useEffect } from "react";
 
 export default async function Planechase() {
   const planes = await getAllPlanes()

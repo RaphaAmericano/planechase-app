@@ -15,7 +15,7 @@ function HistoryContainer(){
     function closeModal(){
         modal_ref.current?.close()
     }
-
+    // Todo: ver uma maneira de componentizar o dialog
     return <>
             <button className="btn" onClick={openModal}>Histórico</button>
             <dialog ref={modal_ref} className="modal">
