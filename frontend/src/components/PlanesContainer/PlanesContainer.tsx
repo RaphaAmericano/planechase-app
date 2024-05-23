@@ -8,7 +8,7 @@ type Props = {
 function PlanesContainer(){
     const { current } = usePlaneStore()
     const plane = current()
-    return  <div className="stack rotate-90 w-full">
+    return  <div className="stack rotate-90">
                 {plane && <Plane {...plane} />}
             </div>    
 }

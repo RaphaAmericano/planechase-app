@@ -4,7 +4,7 @@ import { DialogProps } from "./Dialog.props"
 
 function Dialog({ children, defaultCloseButton = false }: DialogProps, ref:Ref<HTMLDialogElement> ){
     function closeModal(){
-        if(ref!.current!) { // Check if ref.current is not null
+        if(ref!.current) { // Check if ref.current is not null
             ref!.current!.close(); // Call close() on ref.current
         }
     }

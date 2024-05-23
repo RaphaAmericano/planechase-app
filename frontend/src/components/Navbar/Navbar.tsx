@@ -12,17 +12,11 @@ function Navbar(props: any){
             <Link href="/planechase">Partida</Link>
           </li>
           <li>
-            <a>Partida</a>
             <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>
-                
-              </a>
-              </li>
-              
+              <li><Link href="/rules">Regras</Link></li>
+              <li><Link href="/about">O que é?</Link></li>
             </ul>
           </li>
-          <li><a>Item 3</a></li>
         </ul>
       </div>
       <Link href="/" className="btn btn-ghost text-xl">Planechase</Link>
@@ -40,7 +34,6 @@ function Navbar(props: any){
           <details>
             <summary>Tema</summary>
             <ul className="p-2">
-              
               <div className="join join-vertical">
                   <input type="radio" name="theme-buttons" className="btn theme-controller join-item" aria-label="Cyberpunk" value="cyberpunk"/>                  
                   <input type="radio" name="theme-buttons" className="btn theme-controller join-item" aria-label="Light" value="light"/>
